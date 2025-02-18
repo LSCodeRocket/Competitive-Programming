@@ -1,8 +1,10 @@
 #define MAX_ARRAY_SIZE 2048
+
 #include <iostream>
 #include <cstdlib>
 #include <stdbool.h>
 #include <ctime>
+
 #include "../include/MSSV1.hpp"
 #include "../include/MSSV2.hpp"
 #include "../include/MSSV3.hpp"

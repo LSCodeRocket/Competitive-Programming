@@ -1,8 +1,37 @@
-CC = g++ -Wall -O2 -g 
+CC = gcc -Wall -Werror -Wpedantic -g 
+CPP = g++ -Wall -Werror -Wpedantic -g 
+
+GREEDY_VS_DYNAMIC_RUN: GREEDY_VS_DYNAMIC_COINS
+	./build/GREEDY_VS_DYNAMIC.out
+
+GREEDY_VS_DYNAMIC_COINS:
+	${CPP} -o build/GREEDY_VS_DYNAMIC.out src/GREEDY_VS_DYNAMIC_COINS.c
+
+GRID_PATHS_UNOPTIMIZED_RUN: N_GRID_PATHS_UNOPTIMIZED
+	./build/N_GRID_PATHS_UNOPTIMIZED.out
+
+N_GRID_PATHS_UNOPTIMIZED:
+	${CPP} -o build/N_GRID_PATHS_UNOPTIMIZED.out src/N_GRID_PATHS_UNOPTIMIZED.cpp
+
+GRID_PATHS_RUN: N_GRID_PATHS
+	./build/N_GRID_PATHS.out
+
+N_GRID_PATHS:
+	${CPP} -o build/N_GRID_PATHS.out src/N_GRID_PATHS.cpp
+
+MSS_TEST_RUN: MSS_TEST
+	./build/MSS_TEST.out
 
 MSS_TEST: 
-	${CC} -o build/MSS_TEST.exe src/MSS_TEST.cpp
+	${CPP} -o build/MSS_TEST.out src/MSS_TEST.cpp
 	
+N_QUEENS_TEST_RUN: N_QUEENS_TEST
+	./build/N_QUEENS_TEST.out
+
+N_QUEENS_TEST: 
+	${CPP} -o build/N_QUEENS_TEST.out src/N_QUEENS.cpp 
+
 clean:
-	rm build/*
+	rm build/*.out
+	rm *.o
 
